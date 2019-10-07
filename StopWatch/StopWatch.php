@@ -23,16 +23,16 @@ class StopWatch
 
     public function start()
     {
-        $this->startTime = microtime(true);
+        $this->startTime = round(microtime(true) * 1000);
     }
 
     public function stop()
     {
-        $this->endTime = microtime(true);
+        $this->endTime = round(microtime(true) * 1000);
     }
 
     public function getElapsedTime()
     {
-        return ($this->stop() - $this->start());
+        return $this->endTime - $this->startTime;
     }
 }
